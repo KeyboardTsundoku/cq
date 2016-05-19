@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head>
+
+  <title>Comfortably Quiet</title>
+  {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+  <meta name="viewport" content="width=850" />
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+
+  {block:IfEnableEndlessScrolling}
+    <script type="text/javascript" src="http://static.tumblr.com/q0etgkr/EIBmz7s0p/infinitescrolling.js"></script>
+  {/block:IfEnableEndlessScrolling}
+</head>
+<body>
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <!-- Pinterest Widget -->
+  <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+  <div class="container-fluid">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-default">
+      <!--a class="title pull-left" href="/">
+        <img class="img-circle" src={PortraitURL-64} alt="Comfortably Quiet" data-pin-nopin="true"/>
+      </a-->
+      <ul class="nav nav-pills">
+          {block:HasPages}
+            {block:Pages}<li role="presentation"><a href="{URL}">{Label}</a></li>{/block:Pages}
+          {/block:HasPages}
+          {block:AskEnabled}<li role="presentation"><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+      </ul>
+    </nav>
+
+    <!-- Menu -->
+    <div id="menu" class="list-group col-md-3">
+      <a href="#" class="list-group-item">
+        <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> Home
+      </a>
+      <a href="#comics" data-toggle="collapse" class="list-group-item" aria-expanded="false" aria-controls="comics">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Comics
+      </a>
+      <div id="comics" class="collapse">
+        <a href="http://xkcd.com/" class="list-group-item">
+          <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> XKCD
+        </a>
+        <a href="http://www.robot-hugs.com/" class="list-group-item">
+          <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> Robot Hugs
+        </a>
+        <a href="#flash" data-toggle="modal" data-target="#comic-img" class="list-group-item">
+          <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> IMG
+        </a>
+      </div>
+      <a href="#wishlist" data-toggle="collapse" class="list-group-item" aria-expanded="false" aria-controls="wishlist">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Wishlist
+      </a>
+      <div id="wishlist" class="collapse">
+        <a href="https://au.pinterest.com/comfyquiet/travel/" class="list-group-item">
+          <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> Travel
+        </a>
+      </div>
+      <a href="#fav" data-toggle="collapse" class="list-group-item" aria-expanded="false" aria-controls="fav">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Favourites
+      </a>
+      <div id="fav" class="collapse">
+        <a href="" class="list-group-item">
+          <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> Books
+        </a>
+        <a href="" class="list-group-item">
+          <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> Games
+        </a>
+        <a href="" class="list-group-item">
+          <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> TV Shows
+        </a>
+        <a href="" class="list-group-item">
+          <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> Music
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="comic-img" tabindex="-1" role="dialog" aria-labelledby="label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="label">xkcd</h4>
+          </div>
+          <div class="modal-body">
+            <div class="center-block">
+              <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/travel/"></a>
+              <!--img src="http://imgs.xkcd.com/comics/laser_products.png" alt="xkcd"-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div id="content" class="col-md-9">
+      {block:Posts}
+      <div id="post">
+
+        {block:Text}
+          <div class="media">
+            {block:Title}
+              <h3 class="media-heading">{Title}</h3>
+            {/block:Title}
+            <div class="media-body">
+              {Body}
+              {block:PermalinkPage}
+                {block:HasTags}
+                   {block:Tags}
+                     <a href="{TagURL}">{Tag}</a>
+                   {/block:Tags}
+                {/block:HasTags}
+              {/block:PermalinkPage}
+            </div>
+            <div class="media-right">
+              <span class="glyphicon glyphicon-align-left media-object" aria-hidden="true"></span>
+            </div>
+          </div>
+        {/block:Text}
+
+        {block:Video}
+          <div class="media">
+            {block:Title}
+              <h3 class="media-heading">{Title}</h3>
+            {/block:Title}
+            <div class="media-body">
+              <div class="center-block">{Video-500}</div>
+              {block:Caption}<br/>{Caption}{/block:Caption}
+              {block:PermalinkPage}
+                {block:HasTags}
+                   {block:Tags}
+                     <a href="{TagURL}">{Tag}</a>
+                   {/block:Tags}
+                {/block:HasTags}
+              {/block:PermalinkPage}
+            </div>
+            <div class="media-right">
+              <span class="glyphicon glyphicon-facetime-video media-object" aria-hidden="true"></span>
+            </div>
+          </div>
+        {/block:Video}
+
+        {block:Audio}
+          <div class="media">
+            {block:Title}
+              <h3 class="media-heading">{Title}</h3>
+            {/block:Title}
+            <div class="media-body">
+              <div class="center audio">
+                {block:AudioEmbed}
+                  {AudioEmbed-500}
+                {/block:AudioEmbed}
+                {block:AudioPlayer}
+                  {AudioPlayerWhite}&nbsp;&nbsp;{block:ExternalAudio}<a href="{ExternalAudioURL}" class="download_link">{lang:Download}</a>{/block:ExternalAudio}
+                {/block:AudioPlayer}
+              </div>
+              {block:Caption}<br/>{Caption}{/block:Caption}
+              {block:PermalinkPage}
+                {block:HasTags}
+                   {block:Tags}
+                     <a href="{TagURL}">{Tag}</a>
+                   {/block:Tags}
+                {/block:HasTags}
+              {/block:PermalinkPage}
+            </div>
+            <div class="media-right">
+              <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+            </div>
+          </div>
+        {/block:Audio}
+
+        {block:Quote}
+        <div class="media">
+          {block:Title}
+            <h3 class="media-heading">{Title}</h3>
+          {/block:Title}
+          <div class="media-body">
+            <div class="words">{Quote}</div>
+            {block:Source}&mdash; {Source}{/block:Source}
+            {block:PermalinkPage}
+              {block:HasTags}
+                 {block:Tags}
+                   <a href="{TagURL}">{Tag}</a>
+                 {/block:Tags}
+              {/block:HasTags}
+            {/block:PermalinkPage}
+          </div>
+          <div class="media-right">
+            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+          </div>
+        </div>
+        {/block:Quote}
+
+        {block:Link}
+
+        <div class="media">
+          {block:Title}
+            <h3 class="media-heading">{Title}</h3>
+          {/block:Title}
+          <div class="media-body">
+            <a class="link" href="{URL}" {Target}>{Name}</a>
+            {block:Description}{Description}{/block:Description}
+            {block:PermalinkPage}
+              {block:HasTags}
+                 {block:Tags}
+                    <a href="{TagURL}">{Tag}</a>
+                 {/block:Tags}
+              {/block:HasTags}
+            {/block:PermalinkPage}
+          </div>
+          <div class="media-right">
+            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+          </div>
+        </div>
+        {/block:Link}
+
+          {block:IfDisqusShortname}
+          <div class="notecontainer" style="margin: 40px 0 0 0; padding: 0;">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+            <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
+          </div>
+          <div style="text-align: right; margin-top: 5px">
+            {lang:Blog comments powered by Disqus 2}
+          </div>
+          {/block:IfDisqusShortname}
+          {/block:Permalink}
+          </div>
+        {/block:Posts}
+      </div>
+
+  {block:IfDisqusShortname}
+  <script type="text/javascript">
+  //<![CDATA[
+  (function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+      if(links[i].href.indexOf('#disqus_thread') >= 0) {
+        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+      }
+    }
+    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+    })();
+    //]]>
+    </script>
+  {/block:IfDisqusShortname}
+
+</body>
+</html>
