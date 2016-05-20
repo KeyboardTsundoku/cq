@@ -17,6 +17,9 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
 
+  <!-- YUI -->
+  <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+
   {block:IfEnableEndlessScrolling}
     <script type="text/javascript" src="http://static.tumblr.com/q0etgkr/EIBmz7s0p/infinitescrolling.js"></script>
   {/block:IfEnableEndlessScrolling}
@@ -30,6 +33,9 @@
   <!-- Pinterest Widget -->
   <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
+  <script src="https://dl.dropbox.com/s/lljo7o6mj94g1pf/index.js"></script>
+
+    
   <div class="container-fluid">
     <!-- Nav Bar -->
     <nav class="navbar navbar-default">
@@ -59,7 +65,7 @@
         <a href="http://www.robot-hugs.com/" class="list-group-item">
           <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> Robot Hugs
         </a>
-        <a href="#flash" data-toggle="modal" data-target="#comic-img" class="list-group-item">
+        <a href="#comic-img" data-toggle="modal" data-target="#comic-img" class="list-group-item">
           <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> IMG
         </a>
       </div>
@@ -100,7 +106,14 @@
           </div>
           <div class="modal-body">
             <div class="center-block">
-              <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/travel/"></a>
+              <!--a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/travel/"></a-->
+                <div id="modal-item"></div>
+                  <script>
+                     $(function() {
+                        var p = new Parse("http://www.robot-hugs.com/feed/");
+                        p.convert();
+                      });
+                  </script>
               <!--img src="http://imgs.xkcd.com/comics/laser_products.png" alt="xkcd"-->
             </div>
           </div>
