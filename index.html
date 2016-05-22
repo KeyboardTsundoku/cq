@@ -16,13 +16,7 @@
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-
-  <!-- YUI -->
-  <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
-
-  {block:IfEnableEndlessScrolling}
-    <script type="text/javascript" src="http://static.tumblr.com/q0etgkr/EIBmz7s0p/infinitescrolling.js"></script>
-  {/block:IfEnableEndlessScrolling}
+  <script type="text/javascript" src="http://static.tumblr.com/q0etgkr/EIBmz7s0p/infinitescrolling.js"></script>
 </head>
 <body>
 
@@ -50,6 +44,11 @@
       </ul>
     </nav>
 
+    <!--script>
+      window.onload = function() {
+        var parse = new Parse();
+      };
+    </script-->
     <!-- Menu -->
     <div id="menu" class="list-group col-md-3">
       <a href="#" class="list-group-item">
@@ -62,7 +61,7 @@
         <a href="http://xkcd.com/" class="list-group-item">
           <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> XKCD
         </a>
-        <a href="http://www.robot-hugs.com/" class="list-group-item">
+        <a href="#comic-img" data-toggle="modal" data-target="#comic-img" id="robot-hugs" class="list-group-item">
           <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> Robot Hugs
         </a>
         <a href="#comic-img" data-toggle="modal" data-target="#comic-img" class="list-group-item">
@@ -102,19 +101,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="label">xkcd</h4>
+            <h4 class="modal-title"></h4>
           </div>
           <div class="modal-body">
             <div class="center-block">
               <!--a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/travel/"></a-->
-                <div id="modal-item"></div>
-                  <script>
-                     $(function() {
-                        var p = new Parse("http://www.robot-hugs.com/feed/");
-                        p.convert();
-                      });
-                  </script>
-              <!--img src="http://imgs.xkcd.com/comics/laser_products.png" alt="xkcd"-->
+                                <!--img src="http://imgs.xkcd.com/comics/laser_products.png" alt="xkcd"-->
             </div>
           </div>
         </div>
