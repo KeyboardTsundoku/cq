@@ -1,0 +1,129 @@
+!!!
+%html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en")
+  %meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+  %head
+    %title="Comfortably Quiet"
+    %meta(name="description" content="{MetaDescription}")
+    %link(rel="shortcut icon" href="{Favicon}")
+    %link(rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}")
+    %meta(name="viewport" content="width=850")
+    
+    / bootstrap css
+    %link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+
+    / css from dropbox
+    %link(rel="stylesheet" type="text/css" href="https://dl.dropbox.com/s/c1bg4raacv6wwys/cq.css")
+    
+    / jQuery (necessary for Bootstrap's Javascript plugins)
+    %script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js")
+  %body
+  
+    / Latest compiled and minified JavaScript
+    %script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
+    / Pinterest widget
+    %script(async defer src="//assets.pinterest.com/js/pinit.js")
+    / js from dropbox
+    %script(src="https://dl.dropbox.com/s/cp8xhnskci4bfmp/cq.js")
+
+    .container-fluid
+      / nav bar
+      %nav.navbar.navbar-default
+        %ul.nav.nav-pills
+          {block:HasPages}{block:Pages}<li role="presentation"><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+          {block:AskEnabled}<li role="presentation"><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+      
+      / menu
+      #menu.list-group.col-md-3
+        %a.list-group-item(href="#comics" data-toggle="collapse" aria-expanded="false" aria-controls="comics")
+          %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Comics 
+        #comics.collapse
+          %a.list-group-item(href="http://xkcd.com/")
+            %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") xkcd
+          %a.list-group-item#robot-hugs(href="#comic-img" data-toggle="modal" data-target="#comic-img")
+            %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Robot Hugs
+      
+      / modal
+      #comic-img.modal.fade(tabindex="-1" role="dialog" aria-labelledby="label")
+        .modal-dialog(role="document")
+          .modal-content
+            .modal-header
+              %button.close(type="button" data-dismiss="modal" aria-label="Close")
+                %span(aria-hidden="true")
+                  &times;
+              %h4.modal-title
+            .modal-body
+
+      / content
+      #content.col-md-9
+        {block:Posts}
+        #post
+          / text
+          {block:Text}
+          .media
+            {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
+            {Body}
+            {block:PermalinkPage}
+            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+          .media-right
+            .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
+          {/block:Text}
+          
+          / video
+          {block:Video}
+          .media
+            {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
+            .media-body
+              .center-block {Video-500}
+            {block:PermalinkPage}
+            {block:Caption}<br/>{Caption}{/block:Caption}
+            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+          .media-right
+            .glyphicon.glyphicon-facetime-video.media-object(aria-hidden="true")
+          {/block:Video}
+
+          / audio
+          {block:Audio}
+          .media
+            {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
+            .media-body
+              .center.audio
+              {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
+              {block:AudioPlayer}
+              {AudioPlayerWhite}&nbsp;&nbsp;{block:ExternalAudio}<a href="{ExternalAudioURL}" class="download_link">{lang:Download}</a>{/block:ExternalAudio}
+              {/block:AudioPlayer}
+            {block:PermalinkPage}
+            {block:Caption}<br/>{Caption}{/block:Caption}
+            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+          .media-right
+            .glyphicon.glyphicon-headphones.media-object(aria-hidden="true")
+          {/block:Audio}
+
+          / quote
+          {block:Quote}
+          .media
+            {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
+            .media-body
+              {Quote}
+              {block:Source}&mdash; {Source}{/block:Source}
+            {block:PermalinkPage}
+            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+          .media-right
+            .glyphicon.glyphicon-comment.media-object(aria-hidden="true")
+          {/block:Quote}
+
+          / link
+          {block:Link}
+          .media
+            {block:Title}  <h3 class="media-heading">{Title}</h3> {/block:Title}
+            .media-body
+              %a(href="{URL}") {Name}
+            {block:PermalinkPage}
+            {block:Description}{Description}{/block:Description} 
+            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+          .media-right
+            .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
+          {/block:Link}
+
+
+
+        {/block:Posts}
