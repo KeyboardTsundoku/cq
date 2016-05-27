@@ -26,22 +26,22 @@
     %script(src="https://dl.dropbox.com/s/cp8xhnskci4bfmp/cq.js")
 
     .container-fluid
-      / nav bar
-      %nav.navbar.navbar-default
-        %ul.nav.nav-pills
-          {block:HasPages}{block:Pages}<li role="presentation"><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
-          {block:AskEnabled}<li role="presentation"><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
-      
+            
       / menu
-      #menu.list-group.col-md-3
-        %a.list-group-item(href="#comics" data-toggle="collapse" aria-expanded="false" aria-controls="comics")
-          %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Comics 
-        #comics.collapse
-          %a.list-group-item(href="http://xkcd.com/")
-            %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") xkcd
-          %a.list-group-item#robot-hugs(href="#comic-img" data-toggle="modal" data-target="#comic-img")
-            %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Robot Hugs
-      
+      #menu.col-md-3
+        <img class="avatar" src={PortraitURL-64} alt="Comfortably Quiet" data-pin-nopin="true">
+        .list-group
+          %a.list-group-item(href="#comics" data-toggle="collapse" aria-expanded="false" aria-controls="comics")
+            %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Comics 
+          #comics.collapse
+            %a.list-group-item#xkcd(href="#comic-img" data-toggle="modal" data-target="#comic-img")
+              %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") xkcd
+            %a.list-group-item#robot-hugs(href="#comic-img" data-toggle="modal" data-target="#comic-img")
+              %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Robot Hugs
+          %a.list-group-item(href="#comics" data-toggle="collapse" aria-expanded="false" aria-controls="comics")
+            %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Comics 
+
+
       / modal
       #comic-img.modal.fade(tabindex="-1" role="dialog" aria-labelledby="label")
         .modal-dialog(role="document")
@@ -55,6 +55,16 @@
 
       / content
       #content.col-md-9
+        / header
+        %a.page-header(href="/")
+          %h1 {Title}
+        
+        / nav bar
+        %nav.navbar.navbar-default
+          %ul.nav.nav-pills
+            {block:HasPages}{block:Pages}<li role="presentation"><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+            {block:AskEnabled}<li role="presentation"><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+
         {block:Posts}
         #post
           / text
