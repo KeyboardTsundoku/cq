@@ -29,7 +29,7 @@
             
       / menu
       #menu.col-md-3
-        <img class="avatar" src={PortraitURL-96} alt="Comfortably Quiet" data-pin-nopin="true">
+        <img class="img-rounded" src={PortraitURL-96} alt="Comfortably Quiet" data-pin-nopin="true">
         .list-group
           %a.list-group-item(href="#comics" data-toggle="collapse" aria-expanded="false" aria-controls="comics")
             %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Comics 
@@ -41,15 +41,15 @@
           %a.list-group-item(href="#interests" data-toggle="collapse" aria-expanded="false" aria-controls="interests")
             %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Interests 
           #interests.collapse
-            %a.list-group-item#xkcd(href="#focus" data-toggle="modal" data-target="#focus")
+            %a.list-group-item#tech(href="#focus" data-toggle="modal" data-target="#focus")
               %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Technology
-            %a.list-group-item#xkcd(href="#focus" data-toggle="modal" data-target="#focus")
+            %a.list-group-item#science(href="#focus" data-toggle="modal" data-target="#focus")
               %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Science
-            %a.list-group-item#xkcd(href="#focus" data-toggle="modal" data-target="#focus")
+            %a.list-group-item#photography(href="#focus" data-toggle="modal" data-target="#focus")
               %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Photography
-            %a.list-group-item#xkcd(href="#focus" data-toggle="modal" data-target="#focus")
+            %a.list-group-item#travel(href="#focus" data-toggle="modal" data-target="#focus")
               %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Travel
-            %a.list-group-item#xkcd(href="#focus" data-toggle="modal" data-target="#focus")
+            %a.list-group-item#graphic(href="#focus" data-toggle="modal" data-target="#focus")
               %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Graphic Art
           %a.list-group-item(href="https://trello.com/b/bpMw7Bm1/cqtheme" target="_blank")
             %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Dev Board
@@ -146,5 +146,8 @@
             .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
           {/block:Link}
         {/block:Posts}
-        {block:PreviousPage} <a href={PreviousPage}></a> {/block:PreviousPage}
-        {block:NextPage} <a href={PreviousPage}></a> {/block:NextPage}
+        {block:Pagination}
+        #pageNav
+          {block:NextPage} <a href="{NextPage}">&larr; <span>{lang:Older}</span></a>{/block:NextPage}
+          {block:PreviousPage} <a href="{PreviousPage}"><span>{lang:Newer}</span> &rarr;</a>{/block:PreviousPage}
+        {/block:Pagination}
