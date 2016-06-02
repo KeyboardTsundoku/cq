@@ -26,11 +26,10 @@
     %script(src="https://dl.dropbox.com/s/cp8xhnskci4bfmp/cq.js")
 
     .container-fluid
-            
       / menu
-      #menu.col-md-3
-        <img class="img-rounded" src={PortraitURL-96} alt="Comfortably Quiet" data-pin-nopin="true">
-        .list-group
+      <img class="img-rounded center-block" id="avatar" src={PortraitURL-128} alt="Comfortably Quiet" data-pin-nopin="true">
+      .col-md-3
+        #menu.list-group
           %a.list-group-item(href="#comics" data-toggle="collapse" aria-expanded="false" aria-controls="comics")
             %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Comics 
           #comics.collapse
@@ -68,12 +67,12 @@
       / content
       #content.col-md-9
         / header
-        %a.page-header(href="/")
+        %a#title.text-center(href="/")
           %h1 {Title}
         
         / nav bar
-        %nav.navbar.navbar-default
-          %ul.nav.nav-pills
+        %nav.navbar.navbar-default#nav-bar
+          %ul.nav.nav-pills.center-block
             {block:HasPages}{block:Pages}<li role="presentation"><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
             {block:AskEnabled}<li role="presentation"><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
 
@@ -82,68 +81,67 @@
           / text
           {block:Text}
           .media
-            {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
-            {Body}
-            {block:PermalinkPage}
-            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-          .media-right
-            .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
+            .media-body
+              {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
+              {Body}
+              {block:PermalinkPage}
+              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+            .media-right
+              .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
           {/block:Text}
           
           / video
           {block:Video}
           .media
-            {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
             .media-body
+              {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
               .center-block {Video-500}
-            {block:PermalinkPage}
-            {block:Caption}<br/>{Caption}{/block:Caption}
-            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-          .media-right
-            .glyphicon.glyphicon-facetime-video.media-object(aria-hidden="true")
+              {block:PermalinkPage}
+              {block:Caption}<br/>{Caption}{/block:Caption}
+              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+            .media-right
+              .glyphicon.glyphicon-facetime-video.media-object(aria-hidden="true")
           {/block:Video}
 
           / audio
           {block:Audio}
           .media
-            {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
             .media-body
-              .center.audio
+              {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
               {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
-              {block:AudioPlayer}
-              {AudioPlayerWhite}&nbsp;&nbsp;{block:ExternalAudio}<a href="{ExternalAudioURL}" class="download_link">{lang:Download}</a>{/block:ExternalAudio}
+              .center-block {block:AudioPlayer}
               {/block:AudioPlayer}
-            {block:PermalinkPage}
-            {block:Caption}<br/>{Caption}{/block:Caption}
-            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-          .media-right
-            .glyphicon.glyphicon-headphones.media-object(aria-hidden="true")
+              {block:PermalinkPage}
+              {block:Caption}<br/>{Caption}{/block:Caption}
+              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+            .media-right
+              .glyphicon.glyphicon-headphones.media-object(aria-hidden="true")
           {/block:Audio}
 
           / quote
           {block:Quote}
           .media
-            {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
             .media-body
+              {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
               {Quote}
               {block:Source}&mdash; {Source}{/block:Source}
-            {block:PermalinkPage}
-            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-          .media-right
-            .glyphicon.glyphicon-comment.media-object(aria-hidden="true")
+              {block:PermalinkPage}
+              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+            .media-right
+              .glyphicon.glyphicon-comment.media-object(aria-hidden="true")
           {/block:Quote}
 
           / link
           {block:Link}
           .media
-            {block:Title}  <h3 class="media-heading">{Title}</h3> {/block:Title}
             .media-body
+              {block:Title}  <h3 class="media-heading">{Title}</h3> {/block:Title}
               %a(href="{URL}") {Name}
-            {block:PermalinkPage}
-            {block:Description}{Description}{/block:Description} 
-            {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-          .media-right
-            .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
+              {block:PermalinkPage}
+              {block:Description}{Description}{/block:Description} 
+              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+            .media-right
+              .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
           {/block:Link}
         {/block:Posts}
         {block:Pagination}

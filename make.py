@@ -13,8 +13,8 @@ html = "index.html"
 js = "cq.js"
 css = "cq.css"
 
-print("Currently Running => converting index.haml to index.html")
-subprocess.call(['haml', 'index.haml', 'index.html'])
+print("Currently Running => converting *.haml to *.html")
+subprocess.call(['haml', 'main.haml', 'index.html'])
 
 # put index html into root folder
 print("Currently Running => transferring index.html")
@@ -40,7 +40,7 @@ except OSError:
 shutil.move(js, jsf)
 
 # convert scss file to css and put in <root>/css
-print("Currently Running => converting coffee files to " + css)
+print("Currently Running => converting sass files to " + css)
 subprocess.call(['sass', 'sass/main.sass', css])
 
 # put css file into root folder
