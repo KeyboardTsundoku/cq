@@ -30,28 +30,6 @@
       <img class="img-rounded center-block" id="avatar" src={PortraitURL-128} alt="Comfortably Quiet" data-pin-nopin="true">
       .col-md-3
         #menu.list-group
-          %a.list-group-item(href="#comics" data-toggle="collapse" aria-expanded="false" aria-controls="comics")
-            %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Comics 
-          #comics.collapse
-            %a.list-group-item#xkcd(data-toggle="modal" data-target="#focus")
-              %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") xkcd
-            %a.list-group-item#robot-hugs(data-toggle="modal" data-target="#focus")
-              %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Robot Hugs
-          %a.list-group-item(href="#interests" data-toggle="collapse" aria-expanded="false" aria-controls="interests")
-            %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Interests 
-          #interests.collapse
-            %a.list-group-item#tech(href="#focus" data-toggle="modal" data-target="#focus")
-              %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Technology
-            %a.list-group-item#science(href="#focus" data-toggle="modal" data-target="#focus")
-              %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Science
-            %a.list-group-item#photography(href="#focus" data-toggle="modal" data-target="#focus")
-              %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Photography
-            %a.list-group-item#travel(href="#focus" data-toggle="modal" data-target="#focus")
-              %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Travel
-            %a.list-group-item#graphic(href="#focus" data-toggle="modal" data-target="#focus")
-              %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Graphic Art
-          %a.list-group-item(href="https://trello.com/b/bpMw7Bm1/cqtheme" target="_blank")
-            %span.glyphicon.glyphicon-triangle-right(aria-hidden="true") Dev Board
           
       / modal
       #focus.modal.fade(tabindex="-1" role="dialog" aria-labelledby="label")

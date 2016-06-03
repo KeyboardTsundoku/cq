@@ -1,4 +1,6 @@
 window.onload = () ->
+  menu = new Menu()
+
   comics = new Comics()
   $('#robot-hugs').click () ->
     comics.getRobotHugs()
