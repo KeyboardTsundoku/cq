@@ -1,0 +1,13 @@
+{block:Video}
+.media
+  .media-body
+    {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
+    .center-block {Video-500}
+    {block:PermalinkPage}
+    {block:Caption}<br/>{Caption}{/block:Caption}
+    {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+  .media-right
+    .glyphicon.glyphicon-facetime-video.media-object(aria-hidden="true")
+{/block:Video}
+
+

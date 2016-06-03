@@ -5,16 +5,18 @@ import subprocess
 # initial setup
 # folders
 rootf = os.path.expanduser('~') + "/Dropbox/cqtheme/"
+htmlf = rootf + 'html/'
 jsf = rootf + 'js/'
 cssf = rootf + 'css/'
 
-# files
+# production files
 html = "index.html"
 js = "cq.js"
 css = "cq.css"
 
-print("Currently Running => converting *.haml to *.html")
-subprocess.call(['haml', 'main.haml', 'index.html'])
+# convert main.haml to index.haml
+print("Currently Running => converting main.haml to index.html")
+subprocess.call(['haml', 'main.haml', html])
 
 # put index html into root folder
 print("Currently Running => transferring index.html")
@@ -25,7 +27,20 @@ except OSError:
 
 shutil.move(html, rootf)
 
-# convert coffee file to js and put in <root>/js
+# convert haml files to html and put in <root>/html
+print("Currently Running => converting *.haml to *.html")
+#hamls = []
+for h in os.listdir('haml/'):
+  print(h)
+  ml =  h.split(".")[0]+'.html'
+  subprocess.call(['haml', 'haml/' + h, ml])
+  try:
+    os.remove(htmlf + ml)
+  except OSError:
+    pass
+  shutil.move(ml, htmlf)
+
+# convert coffee files to js and put in <root>/js
 print("Currently Running => converting coffee files to " + js)
 cat = subprocess.Popen('cat coffee/*.coffee', shell=True, stdout=subprocess.PIPE)
 tmpIndex = open(js, "w")

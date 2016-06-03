@@ -1,0 +1,12 @@
+{block:Link}
+.media
+  .media-body
+    {block:Title}  <h3 class="media-heading">{Title}</h3> {/block:Title}
+    %a(href="{URL}") {Name}
+    {block:PermalinkPage}
+    {block:Description}{Description}{/block:Description} 
+    {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+  .media-right
+    .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
+{/block:Link}
+

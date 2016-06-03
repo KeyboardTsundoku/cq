@@ -57,70 +57,15 @@
         {block:Posts}
         #post
           / text
-          {block:Text}
-          .media
-            .media-body
-              {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
-              {Body}
-              {block:PermalinkPage}
-              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-            .media-right
-              .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
-          {/block:Text}
-          
+          #text          
           / video
-          {block:Video}
-          .media
-            .media-body
-              {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
-              .center-block {Video-500}
-              {block:PermalinkPage}
-              {block:Caption}<br/>{Caption}{/block:Caption}
-              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-            .media-right
-              .glyphicon.glyphicon-facetime-video.media-object(aria-hidden="true")
-          {/block:Video}
-
+          #video
           / audio
-          {block:Audio}
-          .media
-            .media-body
-              {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
-              {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
-              .center-block {block:AudioPlayer}
-              {/block:AudioPlayer}
-              {block:PermalinkPage}
-              {block:Caption}<br/>{Caption}{/block:Caption}
-              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-            .media-right
-              .glyphicon.glyphicon-headphones.media-object(aria-hidden="true")
-          {/block:Audio}
-
+          #audio 
           / quote
-          {block:Quote}
-          .media
-            .media-body
-              {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
-              {Quote}
-              {block:Source}&mdash; {Source}{/block:Source}
-              {block:PermalinkPage}
-              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-            .media-right
-              .glyphicon.glyphicon-comment.media-object(aria-hidden="true")
-          {/block:Quote}
-
+          #quote
           / link
-          {block:Link}
-          .media
-            .media-body
-              {block:Title}  <h3 class="media-heading">{Title}</h3> {/block:Title}
-              %a(href="{URL}") {Name}
-              {block:PermalinkPage}
-              {block:Description}{Description}{/block:Description} 
-              {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
-            .media-right
-              .glyphicon.glyphicon-align-left.media-object(aria-hidden="true")
-          {/block:Link}
+          #link 
         {/block:Posts}
         {block:Pagination}
         #pageNav

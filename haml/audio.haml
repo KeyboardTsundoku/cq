@@ -1,0 +1,14 @@
+{block:Audio}
+.media
+  .media-body
+    {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
+    {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
+    .center-block {block:AudioPlayer}
+    {/block:AudioPlayer}
+    {block:PermalinkPage}
+    {block:Caption}<br/>{Caption}{/block:Caption}
+    {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+  .media-right
+    .glyphicon.glyphicon-headphones.media-object(aria-hidden="true")
+{/block:Audio}
+

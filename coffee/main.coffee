@@ -1,4 +1,6 @@
 window.onload = () ->
+  post = new Post()
+
   menu = new Menu()
 
   comics = new Comics()

@@ -20,8 +20,34 @@ menuJSON = [
     ]
   },
   {
+    "name": "Paper Clips"
+    "href":
+    "icon":
+    "type": "parent"
+    "depth": [
+      {
+        "name": "My Playlist"
+        "href": ""
+        "icon": ""
+        "type": "modal"
+      },
+      {
+        "name": "My pinned tweet"
+        "href": ""
+        "icon": ""
+        "type": "modal"
+      },
+      {
+        "name": "Wishlists & Favourites"
+        "href": "https://trello.com/b/OfGWqp2K"
+        "icon": ""
+        "type": "link"
+      }
+    ]
+  }
+  {
     "name": "Dev Board"
-    "href": "https://trello.com/b/bpMw7Bm1/cqtheme"
+    "href": "https://trello.com/b/bpMw7Bm1"
     "icon": "<span aria-hidden='true' class='glyphicon glyphicon-triangle-right'></span>"
     "type": "link"
   }
