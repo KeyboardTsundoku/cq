@@ -2,41 +2,32 @@ class window.Interests
   constructor: ->
 
   getTech: ->
-    @cleanUp()
-    $('.modal-title').prepend("Technology")
-    tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/tech/"></a>'
-    $('modal-body').prepend(tag)
+    $('.modal-title').empty().prepend("Technology")
+    $('#techModal').siblings().hide() 
+    $('#techModal').show()
 
   getScience: ->
-    @cleanUp()
-    $('.modal-title').prepend("Science")
-    tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/science/"></a>'
-    $('modal-body').prepend(tag)
+    $('.modal-title').empty().prepend("Science")
+    $('#sciModal').siblings().hide() 
+    $('#sciModal').show()
 
   getEducation: ->
-    @cleanUp()
-    $('.modal-title').prepend("Science")
-    tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/education/"></a>'
-    $('modal-body').prepend(tag)
+    $('.modal-title').empty().prepend("Science")
+    $('#edModal').siblings().hide() 
+    $('#edModal').show()
 
   getPhotography: ->
-    @cleanUp()
-    $('.modal-title').prepend("Photography")
-    tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/my-photographs/"></a>'
-    $('modal-body').prepend(tag)
-    
+    $('.modal-title').empty().prepend("Photography")
+    $('#photoModal').siblings().hide() 
+    $('#photoModal').show()
+
   getTravel: ->
-    @cleanUp()
-    $('.modal-title').prepend("Travel")
-    tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/travel/"></a>'
-    $('modal-body').prepend(tag)
-    
+    $('.modal-title').empty().prepend("Travel")
+    $('#travelModal').siblings().hide() 
+    $('#travelModal').show()
+
   getArt: ->
-    @cleanUp()
-    $('.modal-title').prepend("Art")
-    tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/art/"></a>'
-    $('modal-body').prepend(tag)
-  
-  cleanUp: ->
-    $('.modal-title').empty()
-    $('.modal-body').empty()
+    $('.modal-title').empty().prepend("Art")
+    $('#artModal').siblings().hide() 
+    $('#artModal').show()
+

@@ -64,21 +64,21 @@ menuJSON = [
     ]
   }
   {
-    "name": "Clips"
+    "name": "Miscellaneous"
     "href": "#paperclips"
     "icon": '<i class="fa fa-paperclip" aria-hidden="true"></i>'
     "type": "parent"
     "depth": [
       {
         "name": "My Playlist"
-        "href": "https://play.google.com/music/playlist/AMaBXylKskCXe8Z6-63NTWKiUCSI7dsvygl9nHI6O49b-nHbrwRfvPoW6PKH65GVGcC4BDP01L59uCys2-6mQ-ASduXCB2mw_Q=="
-        "icon": ""
-        "type": "modal"
+        "href": 'https://play.google.com/music/playlist/AMaBXylKskCXe8Z6-63NTWKiUCSI7dsvygl9nHI6O49b-nHbrwRfvPoW6PKH65GVGcC4BDP01L59uCys2-6mQ-ASduXCB2mw_Q=='
+        "icon": '<i class="fa fa-headphones" aria-hidden="true"></i>'
+        "type": "link"
       },
       {
         "name": "Wishlists & Favourites"
         "href": "https://trello.com/b/OfGWqp2K"
-        "icon": ""
+        "icon": '<i class="fa fa-star-half-o" aria-hidden="true"></i>'
         "type": "link"
       }
     ]

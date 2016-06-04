@@ -44,7 +44,7 @@
                   &times;
               %h4.modal-title
             .modal-body
-
+              = Haml::Engine.new(File.read('haml/modal.haml')).render
       / content
       #content.col-md-9
         / header
@@ -60,18 +60,27 @@
         {block:Posts}
         #post
           / text
-          #text          
+          = Haml::Engine.new(File.read('haml/text.haml')).render
           / video
-          #video
+          = Haml::Engine.new(File.read('haml/video.haml')).render
           / audio
-          #audio 
+          = Haml::Engine.new(File.read('haml/audio.haml')).render
           / quote
-          #quote
+          = Haml::Engine.new(File.read('haml/quote.haml')).render
           / link
-          #link 
+          = Haml::Engine.new(File.read('haml/link.haml')).render
         {/block:Posts}
         {block:Pagination}
-        #pageNav
-          {block:NextPage} <a href="{NextPage}">&larr; <span>{lang:Older}</span></a>{/block:NextPage}
-          {block:PreviousPage} <a href="{PreviousPage}"><span>{lang:Newer}</span> &rarr;</a>{/block:PreviousPage}
+        %nav#pageNav
+          %ul.pager 
+            {block:PreviousPage}
+            %li.previous
+              %a(href="{PreviousPage}") 
+                %i.fa.fa-chevron-circle-left.fa-4x(aria-hidden="true")
+            {/block:PreviousPage}
+            {block:NextPage}
+            %li.next
+              %a(href="{NextPage}")
+                %i.fa.fa-chevron-circle-right.fa-4x(area-hidden="true")
+            {/block:NextPage}
         {/block:Pagination}

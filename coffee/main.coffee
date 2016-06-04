@@ -1,6 +1,4 @@
 window.onload = () ->
-  post = new Post()
-
   sidebar = new SideBar()
 
   comics = new Comics()
@@ -23,3 +21,8 @@ window.onload = () ->
   $('#graphic').click () ->
     interests.getGraphic() 
 
+###
+  paperclips = new Paperclips()
+  $('#playlist').click () ->
+    paperclips.getPlaylist()
+###
