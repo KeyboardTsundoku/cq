@@ -13,6 +13,12 @@ class window.Interests
     tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/science/"></a>'
     $('modal-body').prepend(tag)
 
+  getEducation: ->
+    @cleanUp()
+    $('.modal-title').prepend("Science")
+    tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/education/"></a>'
+    $('modal-body').prepend(tag)
+
   getPhotography: ->
     @cleanUp()
     $('.modal-title').prepend("Photography")
@@ -25,10 +31,10 @@ class window.Interests
     tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/travel/"></a>'
     $('modal-body').prepend(tag)
     
-  getGraphic: ->
+  getArt: ->
     @cleanUp()
-    $('.modal-title').prepend("Graphic Art")
-    tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/graphic-art/"></a>'
+    $('.modal-title').prepend("Art")
+    tag = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://au.pinterest.com/comfyquiet/art/"></a>'
     $('modal-body').prepend(tag)
   
   cleanUp: ->

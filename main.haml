@@ -14,9 +14,12 @@
     / css from dropbox
     %link(rel="stylesheet" type="text/css" href="https://dl.dropbox.com/s/c1bg4raacv6wwys/cq.css")
     
-    / jQuery (necessary for Bootstrap's Javascript plugins)
+    / jQuery
     %script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js")
   %body
+
+    / font awesome
+    %script(src="https://use.fontawesome.com/1fa1d3293c.js")
   
     / Latest compiled and minified JavaScript
     %script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
@@ -27,9 +30,9 @@
 
     .container-fluid
       / menu
-      <img class="img-rounded center-block" id="avatar" src={PortraitURL-128} alt="Comfortably Quiet" data-pin-nopin="true">
       .col-md-3
-        #menu.list-group
+        <img class="img-rounded center-block" id="avatar" src={PortraitURL-128} alt="Comfortably Quiet" data-pin-nopin="true">
+        #sidebar.list-group
           
       / modal
       #focus.modal.fade(tabindex="-1" role="dialog" aria-labelledby="label")

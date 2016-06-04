@@ -1,25 +1,21 @@
 .nav
+  @extend .bar
   width: 80% 
   height: 30px
-  font-family: $navFont
-  font-size: $navFontSize
-  font-weight: $navFontWeight
-  color: $navText
   text-align: center
   background: $navBackground
-  line-height: 2.20em
 
 #nav-bar
   background: $navBackground
-  +border-radius(28px)
-  margin: 0px
-  border: 0px
+  +border-radius(30px)
+  margin: $baseZero
+  border: $baseZero
   
 #title
-  color: $title
   h1
+    color: $title
     font-size: 44px 
     font-family: $titleFont
     letter-spacing: -1px
     margin: $baseMargin 
-    padding: 0px
+    padding: $baseZero

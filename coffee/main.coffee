@@ -1,7 +1,7 @@
 window.onload = () ->
   post = new Post()
 
-  menu = new Menu()
+  sidebar = new SideBar()
 
   comics = new Comics()
   $('#robot-hugs').click () ->
@@ -14,6 +14,8 @@ window.onload = () ->
     interests.getTech()
   $('#science').click () ->
     interests.getScience()
+  $('#education').click () ->
+    interests.getEducation()
   $('#photography').click () ->
     interests.getPhotography()
   $('#travel').click () ->
