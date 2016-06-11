@@ -1,25 +1,31 @@
 window.onload = () ->
   sidebar = new SideBar()
-
-  comics = new Comics()
-  $('#robot-hugs').click () ->
-    comics.getRobotHugs()
+    
+  modal = new Modal()
   $('#xkcd').click () ->
-    comics.getXKCD()
-  
-  interests = new Interests()
+    modal.getXKCD()
+  $('#robot-hugs').click () ->
+    modal.getRobotHugs()
+  $('#nydc').click () ->
+    modal.getNYDC()
+  $('#dilbert').click () ->
+    modal.getDilbert()
+  $('#garfield').click () ->
+    modal.getGarfield()
   $('#tech').click () ->
-    interests.getTech()
+    modal.getTech()
   $('#science').click () ->
-    interests.getScience()
-  $('#education').click () ->
-    interests.getEducation()
-  $('#photography').click () ->
-    interests.getPhotography()
+    modal.getScience()
+  $('#ed').click () ->
+    modal.getEducation()
+  $('#photo').click () ->
+    modal.getPhotography()
   $('#travel').click () ->
-    interests.getTravel()
-  $('#graphic').click () ->
-    interests.getGraphic() 
+    modal.getTravel()
+  $('#art').click () ->
+    modal.getArt()
+  $('#onrepeats').click () ->
+    modal.getOnRepeats()
 
 ###
   paperclips = new Paperclips()

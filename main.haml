@@ -25,15 +25,24 @@
     %script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
     / Pinterest widget
     %script(async defer src="//assets.pinterest.com/js/pinit.js")
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
     / js from dropbox
     %script(src="https://dl.dropbox.com/s/cp8xhnskci4bfmp/cq.js")
 
     .container-fluid
-      / menu
+      / sidebar 
       .col-md-3
-        <img class="img-rounded center-block" id="avatar" src={PortraitURL-128} alt="Comfortably Quiet" data-pin-nopin="true">
         #sidebar.list-group
-          
+          %a(href="/")
+            .media
+              .media-left
+                %img.media-object(src="{portraitURL-64}")
+              .media-body
+                #title {Title}
+        
+   
       / modal
       #focus.modal.fade(tabindex="-1" role="dialog" aria-labelledby="label")
         .modal-dialog(role="document")
@@ -47,10 +56,6 @@
               = Haml::Engine.new(File.read('haml/modal.haml')).render
       / content
       #content.col-md-9
-        / header
-        %a#title.text-center(href="/")
-          %h1 {Title}
-        
         / nav bar
         %nav.navbar.navbar-default#nav-bar
           %ul.nav.nav-pills.center-block

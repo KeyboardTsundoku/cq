@@ -16,6 +16,24 @@ menuJSON = [
         "id": "robot-hugs"
         "icon": '<img src="https://dl.dropbox.com/s/kj16vh46gxysxsl/robot-hugs.png" alt="Robot Hugs"></img>'
         "type": "modal"
+      },
+      {
+        "name": "The New York Daily Cartoon"
+        "id": "nydc"
+        "icon": '<img src="https://dl.dropbox.com/s/t9hk4l2kbne0te5/nydc.png" alt="The New York Daily Cartoon"></img>'
+        "type": "modal"
+      },
+      {
+        "name": "Dilbert"
+        "id": "dilbert"
+        "icon": '<img src="https://dl.dropbox.com/s/2d3mt36ls6rpfn6/dilbert.png" alt="Dilbert"></img>'
+        "type": "modal"
+      },
+      {
+        "name": "Garfield"
+        "id": "garfield"
+        "icon": '<img src="https://dl.dropbox.com/s/675xwkiyvnh2s13/garfield.png" alt="Garfield"></img>'
+        "type": "modal"
       }
     ]
   },
@@ -80,6 +98,12 @@ menuJSON = [
         "href": "https://trello.com/b/OfGWqp2K"
         "icon": '<i class="fa fa-star-half-o" aria-hidden="true"></i>'
         "type": "link"
+      },
+      {
+        "name": "On Repeats"
+        "id": "onrepeats"
+        "icon": '<i class="fa fa-retweet" aria-hidden="true"></i>'
+        "type": "modal"
       }
     ]
   }
