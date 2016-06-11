@@ -1,0 +1,93 @@
+/*  Variables
+ *
+ *  All the font variables used */
+/*  Mixins
+ *
+ *  All the functions */
+html,
+body {
+  margin: 15px 0px;
+  padding: 0px;
+  color: black;
+  font-family: "Sofia Pro", sans-serif;
+  background: #4D4D4D; }
+
+.bar, .nav, #sidebar {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  height: 30px;
+  line-height: 35px; }
+
+.nav {
+  width: 80%;
+  height: 30px;
+  text-align: center;
+  background: #8BA5C9; }
+
+#nav-bar {
+  background: #8BA5C9;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+  margin: 0px;
+  border: 0px; }
+
+#title {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: "Arquitecta", sans-serif;
+  letter-spacing: -1px;
+  margin: 0px;
+  padding: 0px; }
+
+#avatar {
+  margin-top: 10px;
+  margin-bottom: 15px; }
+
+#sidebar {
+  position: fixed;
+  width: 330px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px; }
+  #sidebar .list-group-item {
+    padding: 0px 0px 0px 5px;
+    background: #779D89;
+    color: white; }
+  #sidebar .sub-level-a {
+    padding: 0px 0px 0px 20px;
+    background: #A0B8AB; }
+
+a {
+  color: white; }
+
+.modal-dialog {
+  min-width: 950px; }
+
+#content {
+  width: 750px; }
+
+#post {
+  position: relative;
+  background-color: white;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+  padding: 5px 20px;
+  margin: 15px 0px; }
+  #post .glyphicon {
+    font-size: 4em; }
+  #post img {
+    max-width: 110%; }
+  #post a {
+    color: #4D4D4D;
+    font-weight: bold;
+    text-decoration: none; }
+
+/*# sourceMappingURL=cq.css.map */

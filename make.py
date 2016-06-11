@@ -12,9 +12,11 @@ cssf = rootf + 'css/'
 # production files
 html = "index.html"
 js = "cq.js"
+jsmin = "cq.min.js"
 css = "cq.css"
+cssmin = "cq.min.css"
 
-# convert main.haml to index.haml
+# convert main.haml to index.html
 print("Currently Running => converting main.haml to index.html")
 subprocess.call(['haml', 'main.haml', html])
 
@@ -27,42 +29,38 @@ except OSError:
 
 shutil.move(html, rootf)
 
-# convert haml files to html and put in <root>/html
-print("Currently Running => converting *.haml to *.html")
-#hamls = []
-for h in os.listdir('haml/'):
-  print(h)
-  ml =  h.split(".")[0]+'.html'
-  subprocess.call(['haml', 'haml/' + h, ml])
-  try:
-    os.remove(htmlf + ml)
-  except OSError:
-    pass
-  shutil.move(ml, htmlf)
-
 # convert coffee files to js and put in <root>/js
 print("Currently Running => converting coffee files to " + js)
 cat = subprocess.Popen('cat coffee/*.coffee', shell=True, stdout=subprocess.PIPE)
 tmpIndex = open(js, "w")
 coffee = subprocess.Popen(['coffee', '-c', '-s'], stdin=cat.stdout, stdout=tmpIndex)
 
-print("Currently Running => transferring " + js)
+# minify js file
+print("Currently Running => minify " + js + " to " + jsmin)
+subprocess.call(['java', '-jar', 'yuiminify.jar', js, '-o', jsmin])
+
+# transfer minified js file
+print("Currently Running => transferring " + jsmin)
 try:
-  os.remove(jsf + js)
+  os.remove(jsf + jsmin)
 except OSError:
   pass
 
-shutil.move(js, jsf)
+shutil.move(jsmin, jsf)
 
 # convert scss file to css and put in <root>/css
 print("Currently Running => converting sass files to " + css)
 subprocess.call(['sass', 'sass/main.sass', css])
 
+# minify css file
+print("Currently Running => minify " + css + " to " + cssmin)
+subprocess.call(['java', '-jar', 'yuiminify.jar', css, '-o', cssmin])
+
 # put css file into root folder
 print("Currently Running => transferring " + css)
 try:
-  os.remove(cssf + css)
+  os.remove(cssf + cssmin)
 except OSError:
   pass
 
-shutil.move(css, cssf)
+shutil.move(cssmin, cssf)
