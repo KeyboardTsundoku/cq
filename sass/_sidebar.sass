@@ -1,12 +1,20 @@
 #avatar
-  margin-top: 10px
+  margin-top: 15px
   margin-bottom: 15px
+
+#title
+  margin-top: 10px 
+  font-size: 35px
+  text-decoration: none
+  color: $title
+  font-family: $titleFont
+  letter-spacing: -1px
+  padding: $baseZero   
 
 #sidebar
   @extend .bar
   position: fixed
-  width: 330px
-  +border-radius(30px) 
+  width: 320px
   .list-group-item
     padding: 0px 0px 0px 5px
     background: $sidebarBackground
@@ -14,6 +22,7 @@
   .sub-level-a
     padding: 0px 0px 0px 20px
     background: $sidebarBackgroundA
+    +border-radius(0px)
 
 a
   color: $barText

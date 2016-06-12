@@ -18,7 +18,7 @@ cssmin = "cq.min.css"
 
 # convert main.haml to index.html
 print("Currently Running => converting main.haml to index.html")
-subprocess.call(['haml', 'main.haml', html])
+subprocess.call(['haml', 'haml/main.haml', html])
 
 # put index html into root folder
 print("Currently Running => transferring index.html")
@@ -64,3 +64,9 @@ except OSError:
   pass
 
 shutil.move(cssmin, cssf)
+
+# clean dev directory
+print("Currently Running => cleaning dev directory")
+os.remove(js)
+os.remove(css)
+os.remove("cq.css.map")

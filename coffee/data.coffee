@@ -76,7 +76,7 @@ menuJSON = [
       {
         "name": "Art"
         "id": "art"
-        "icon": '<i class="fa fa-paint-brush" aria-hidden="true"></i>' 
+        "icon": '<i class="fa fa-paint-brush" aria-hidden="true"></i>'
         "type": "modal"
       }
     ]
@@ -88,7 +88,7 @@ menuJSON = [
     "type": "parent"
     "depth": [
       {
-        "name": "My Playlist"
+        "name": "Playlist"
         "href": 'https://play.google.com/music/playlist/AMaBXylKskCXe8Z6-63NTWKiUCSI7dsvygl9nHI6O49b-nHbrwRfvPoW6PKH65GVGcC4BDP01L59uCys2-6mQ-ASduXCB2mw_Q=='
         "icon": '<i class="fa fa-headphones" aria-hidden="true"></i>'
         "type": "link"

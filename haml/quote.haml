@@ -1,13 +1,13 @@
 {block:Quote}
 .media
-  .media-body
+  .media-body.quote
     {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
     {Quote}
-    {block:Source}&mdash; {Source}{/block:Source}
+    {block:Source}<br /><div class="source">&mdash; {Source}</div>{/block:Source}
     {block:PermalinkPage}
     {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
   .media-right
-    .glyphicon.glyphicon-comment.media-object(aria-hidden="true")
+    %i.fa.fa-comment.fa-5x(aria-hidden="true")
 {/block:Quote}
 
 

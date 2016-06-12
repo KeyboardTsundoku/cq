@@ -1,6 +1,6 @@
 {block:Audio}
 .media
-  .media-body
+  .media-body.audio
     {block:Title} <h3 class="media-heading">{Title}</h3> {/block:Title}
     {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
     .center-block {block:AudioPlayer}{/block:AudioPlayer}
@@ -8,6 +8,6 @@
     {block:Caption}<br/>{Caption}{/block:Caption}
     {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
   .media-right
-    .glyphicon.glyphicon-headphones.media-object(aria-hidden="true")
+    %i.fa.fa-headphones.fa-5x(aria-hidden="true")
 {/block:Audio}
 
