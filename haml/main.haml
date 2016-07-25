@@ -35,7 +35,7 @@
       / sidebar 
       .col-md-3
         #sidebar.list-group
-          %a.list-group-item(href="#nav-bar")
+          %a.list-group-item(href="/")
             .media
               .media-left
                 %img#avatar.media-object(src="{portraitURL-64}")
@@ -76,18 +76,18 @@
           = Haml::Engine.new(File.read('haml/link.haml')).render
         {/block:Posts}
         {block:Pagination}
-        %nav#pageNav
+        %nav
           %ul.pager 
             {block:PreviousPage}
-            %li.previous
+            %li#previous
               %a(href="{PreviousPage}") 
                 %i.fa.fa-chevron-circle-left.fa-4x(aria-hidden="true")
             {/block:PreviousPage}
             {block:NextPage}
-            %li.home
-              %a(href="/")
-                %i.fa.fa-home.fa-4x(aria-hidden="true")
-            %li.next
+            %li#toTop
+              %a
+                %i.fa.fa-chevron-circle-up.fa-4x(aria-hidden="true")
+            %li#next
               %a(href="{NextPage}")
                 %i.fa.fa-chevron-circle-right.fa-4x(area-hidden="true")
             {/block:NextPage}

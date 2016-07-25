@@ -84,7 +84,7 @@ menuJSON = [
   {
     "name": "Miscellaneous"
     "href": "#paperclips"
-    "icon": '<i class="fa fa-paperclip" aria-hidden="true"></i>'
+    "icon": '<i class="fa fa-link" aria-hidden="true"></i>'
     "type": "parent"
     "depth": [
       {
@@ -104,6 +104,21 @@ menuJSON = [
         "id": "onrepeats"
         "icon": '<i class="fa fa-retweet" aria-hidden="true"></i>'
         "type": "modal"
+      }
+    ]
+  }
+  {
+    "name": "Current Projects"
+    "href": "#currently"
+    "icon": '<i class="fa fa-paperclip" aria-hidden="true"></i>'
+    "depth": [
+      {
+        "name": "Research"
+        "href": ''
+        "icon": '<i class="fa fa-terminal" aria-hidden="true"></i>'
+        "type": "link"
+      },
+      {
       }
     ]
   }

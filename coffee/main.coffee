@@ -27,8 +27,11 @@ window.onload = () ->
   $('#onrepeats').click () ->
     modal.getOnRepeats()
 
-###
-  paperclips = new Paperclips()
-  $('#playlist').click () ->
-    paperclips.getPlaylist()
-###
+  $('#toTop').click () ->
+    completeCalled = false
+    $('html, body').animate({ scrollTop: "0" },
+    {
+      complete: () ->
+        if (!completeCalled)
+          completeCalled = true
+    })
