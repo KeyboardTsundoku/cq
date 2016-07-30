@@ -5,9 +5,14 @@
     .center-block {Video-500}
     {block:PermalinkPage}
     {block:Caption}<br/>{Caption}{/block:Caption}
-    {block:HasTags}{block:Tags}%a(href="{TagURL}") {Tag}{/block:Tags}{/block:HasTags}{/block:PermalinkPage}
+    {block:HasTags}{block:Tags}
+    %a(href="{TagURL}")
+      {Tag}
+    {/block:Tags}{/block:HasTags}
+    {/block:PermalinkPage}
   .media-right
-    %i.fa.fa-play-circle.fa-5x(aria-hidden="true")
+    %a(href="{Permalink}")
+      %i.fa.fa-play-circle.fa-5x(aria-hidden="true")
 {/block:Video}
 
 

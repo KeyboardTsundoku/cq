@@ -83,7 +83,7 @@ menuJSON = [
   }
   {
     "name": "Miscellaneous"
-    "href": "#paperclips"
+    "href": "#misc"
     "icon": '<i class="fa fa-link" aria-hidden="true"></i>'
     "type": "parent"
     "depth": [
@@ -111,14 +111,25 @@ menuJSON = [
     "name": "Current Projects"
     "href": "#currently"
     "icon": '<i class="fa fa-paperclip" aria-hidden="true"></i>'
+    "type": 'parent'
     "depth": [
       {
         "name": "Research"
-        "href": ''
+        "href": 'https://trello.com/b/ZvFAfjKY'
+        "icon": '<i class="fa fa-terminal" aria-hidden="true"></i>'
+        "type": "link"
+      },
+       {
+        "name": "Model: Endocrine"
+        "href": 'https://trello.com/b/iIRvtJDp'
         "icon": '<i class="fa fa-terminal" aria-hidden="true"></i>'
         "type": "link"
       },
       {
+        "name": "Paper: Position Paper"
+        "href": 'https://trello.com/b/AzxGFEAa'
+        "icon": '<i class="fa fa-terminal" aria-hidden="true"></i>'
+        "type": "link"
       }
     ]
   }

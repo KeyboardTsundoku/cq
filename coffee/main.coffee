@@ -1,4 +1,6 @@
 window.onload = () ->
+  $('#test').load("test.html")
+
   sidebar = new SideBar()
     
   modal = new Modal()
