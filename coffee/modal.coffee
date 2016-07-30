@@ -102,3 +102,8 @@ class window.Modal
     $('.modal-title').empty().prepend("On Repeats")
     $('#onrepeatsModal').siblings().hide()
     $('#onrepeatsModal').show()
+
+  getNostalgia: ->
+    $('.modal-title').empty().prepend("Nostalgia")
+    $('#nostalgiaModal').siblings().hide()
+    $('#nostalgiaModal').show()

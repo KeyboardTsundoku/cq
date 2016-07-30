@@ -104,6 +104,12 @@ menuJSON = [
         "id": "onrepeats"
         "icon": '<i class="fa fa-retweet" aria-hidden="true"></i>'
         "type": "modal"
+      },
+      {
+        "name": "Nostalgia"
+        "id": "nostalgia"
+        "icon": '<i class="fa fa-youtube-play" aria-hidden="true"></i>'
+        "type": 'modal'
       }
     ]
   }
@@ -131,12 +137,12 @@ menuJSON = [
         "icon": '<i class="fa fa-terminal" aria-hidden="true"></i>'
         "type": "link"
       }
+      {
+        "name": "Dev Board"
+        "href": "https://trello.com/b/bpMw7Bm1"
+        "icon": '<i class="fa fa-terminal" aria-hidden="true"></i>'
+        "type": "link"
+      }
     ]
-  }
-  {
-    "name": "Dev Board"
-    "href": "https://trello.com/b/bpMw7Bm1"
-    "icon": '<i class="fa fa-terminal" aria-hidden="true"></i>'
-    "type": "link"
   }
 ]

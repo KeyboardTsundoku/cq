@@ -28,6 +28,8 @@ window.onload = () ->
     modal.getArt()
   $('#onrepeats').click () ->
     modal.getOnRepeats()
+  $('#nostalgia').click () ->
+    modal.getNostalgia()
 
   $('#toTop').click () ->
     completeCalled = false
