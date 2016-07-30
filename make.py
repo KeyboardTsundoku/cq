@@ -4,7 +4,7 @@ import subprocess
 
 # initial setup
 # folders
-rootf = os.path.expanduser('~') + "/Dropbox/cqtheme/"
+rootf = os.path.expanduser('~') + "/Dropbox/cq/"
 htmlf = rootf + 'html/'
 jsf = rootf + 'js/'
 cssf = rootf + 'css/'
